@@ -1,0 +1,6 @@
+{
+  "name": "jamaica-jerk-spot",
+  "private": true,
+  "type": "module",
+  "description": "Jamaica Jerk Spot website — static site + Vercel contact function"
+}
