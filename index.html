@@ -26,7 +26,7 @@
     "priceRange": "$$",
     "address": {"@type": "PostalAddress", "streetAddress": "8150 S Virginia St", "addressLocality": "Reno", "addressRegion": "NV", "postalCode": "89511", "addressCountry": "US"},
     "image": "assets/img/logo-800.jpg",
-    "sameAs": ["https://www.instagram.com/jamaica_jerk_spot/", "https://www.facebook.com/p/Jamaica-Jerk-Spot-100092004240665/", "https://www.yelp.com/biz/jamaica-jerk-spot-reno", "https://linktr.ee/jamaicajerkspot"]
+    "sameAs": ["https://www.instagram.com/jamaica_jerk_spot/", "https://www.facebook.com/p/Jamaica-Jerk-Spot-100092004240665/", "https://www.yelp.com/biz/jamaica-jerk-spot-reno", "https://linktr.ee/jamaicajerkspot", "https://www.tiktok.com/@jamaica_jerk_spot", "https://www.threads.com/@jamaica_jerk_spot"]
   }
   </script>
 </head>
@@ -45,10 +45,11 @@
       <a href="#find">Find the Truck</a>
       <a href="#vibes">Vibes</a>
       <a href="#catering">Catering</a>
+      <a href="#links">Links</a>
     </nav>
     <div class="nav__cta">
       <a class="btn btn--ghost btn--sm" href="tel:+17754703704">775-470-3704</a>
-      <a class="btn btn--gold btn--sm" href="https://www.doordash.com/store/jamaica-jerk-spot-sparks-29679373/" target="_blank" rel="noopener">Order DoorDash</a>
+      <a class="btn btn--gold btn--sm" href="https://www.doordash.com/store/29679373" target="_blank" rel="noopener" data-dd>Order DoorDash</a>
     </div>
     <button class="nav__burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
   </header>
@@ -59,6 +60,7 @@
     <a href="#find">Find the Truck</a>
     <a href="#vibes">Vibes</a>
     <a href="#catering">Catering &amp; Booking</a>
+    <a href="#links">All Links</a>
     <div class="drawer__socials" data-socials></div>
   </div>
 
@@ -126,7 +128,7 @@
         <div class="menu__foot">
           <p>Prices can change and the menu rotates — check the truck board or DoorDash for today's lineup.</p>
           <div class="menu__foot-actions">
-            <a class="btn btn--green" href="https://www.doordash.com/store/jamaica-jerk-spot-sparks-29679373/" target="_blank" rel="noopener">Order on DoorDash</a>
+            <a class="btn btn--green" href="https://www.doordash.com/store/29679373" target="_blank" rel="noopener" data-dd>Order on DoorDash</a>
             <a class="btn btn--line-dark" href="tel:+17754703704">Call 775-470-3704</a>
           </div>
         </div>
@@ -316,6 +318,19 @@
         </form>
       </div>
     </section>
+    <!-- ===== Link hub (mirrors their Linktree) ===== -->
+    <section class="section hub" id="links">
+      <div class="wrap hub__inner">
+        <div class="hub__head">
+          <img src="assets/img/logo-192.jpg" alt="Jamaica Jerk Spot" width="96" height="96" loading="lazy" />
+          <p class="script">Link up wid wi</p>
+          <h2 class="brush brush--gold">All Our Links</h2>
+          <p class="section__sub">Order, follow, review — everything from our Linktree in one spot.</p>
+        </div>
+        <div class="hub__list" data-hub></div>
+        <a class="hub__lt" href="https://linktr.ee/jamaicajerkspot" target="_blank" rel="noopener">Open our Linktree ↗</a>
+      </div>
+    </section>
   </main>
 
   <!-- ===== Footer ===== -->
@@ -342,9 +357,19 @@
   <nav class="dock" aria-label="Quick actions">
     <a href="tel:+17754703704"><span>📞</span>Call</a>
     <a href="#find"><span>📍</span>Find</a>
-    <a href="https://www.doordash.com/store/jamaica-jerk-spot-sparks-29679373/" target="_blank" rel="noopener" class="dock__main"><span>🛵</span>DoorDash</a>
+    <a href="https://www.doordash.com/store/29679373" target="_blank" rel="noopener" data-dd class="dock__main"><span>🛵</span>DoorDash</a>
     <a href="#catering"><span>🎉</span>Book</a>
   </nav>
+
+  <!-- DoorDash picker -->
+  <div class="ddm" data-ddm hidden>
+    <div class="ddm__card" role="dialog" aria-modal="true" aria-labelledby="ddm-title">
+      <button class="ddm__x" type="button" aria-label="Close" data-ddm-close>✕</button>
+      <h3 id="ddm-title">Order on DoorDash</h3>
+      <p>We have two kitchens — pick the one closest to you.</p>
+      <div class="ddm__opts" data-ddm-opts></div>
+    </div>
+  </div>
 
   <div class="toast" data-toast role="status" aria-live="polite"></div>
 

@@ -453,6 +453,43 @@ button { font: inherit; cursor: pointer; }
 .form__status.err { color: var(--red); }
 .form__status a { color: inherit; }
 
+/* ---------- Link hub ---------- */
+.hub { background: var(--green); background-image: linear-gradient(135deg, rgba(0,0,0,.18) 25%, transparent 25% 50%, rgba(0,0,0,.18) 50% 75%, transparent 75%); background-size: 46px 46px; }
+.hub__inner { max-width: 640px; text-align: center; }
+.hub__head img { margin: 0 auto 10px; border-radius: 50%; border: 4px solid var(--gold); box-shadow: 0 10px 30px -10px #000; }
+.hub .script { color: var(--gold); }
+.hub .section__sub { color: rgba(255,255,255,.9); margin-bottom: 30px; }
+.hub__list { display: grid; gap: 12px; text-align: left; }
+.hub__btn {
+  display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--ink);
+  background: var(--paper); border: 3px solid var(--ink); border-radius: 18px; padding: 12px 18px;
+  box-shadow: 0 5px 0 var(--ink); transition: transform .18s, box-shadow .18s;
+}
+.hub__btn:hover { transform: translateY(-3px); box-shadow: 0 8px 0 var(--ink); }
+.hub__btn:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--ink); }
+.hub__btn--dd { background: #eb1700; color: #fff; }
+.hub__btn--gold { background: var(--gold); }
+.hub__ic { width: 40px; height: 40px; flex: none; display: grid; place-items: center; border-radius: 12px; background: rgba(0,0,0,.08); }
+.hub__btn--dd .hub__ic { background: rgba(255,255,255,.18); }
+.hub__ic svg { width: 22px; height: 22px; fill: currentColor; }
+.hub__txt { flex: 1; display: flex; flex-direction: column; line-height: 1.2; }
+.hub__txt small { font-size: .82rem; opacity: .75; font-weight: 500; margin-top: 2px; }
+.hub__arrow { font-weight: 800; opacity: .6; }
+.hub__lt { display: inline-block; margin-top: 22px; color: #fff; font-weight: 700; }
+
+/* ---------- DoorDash picker ---------- */
+.ddm { position: fixed; inset: 0; z-index: 90; background: rgba(0,0,0,.65); backdrop-filter: blur(4px); display: grid; place-items: center; padding: 20px; }
+.ddm[hidden] { display: none; }
+.ddm__card { position: relative; width: min(420px, 100%); background: var(--paper); border: 3px solid var(--ink); border-radius: 24px; padding: 28px; box-shadow: 10px 10px 0 #eb1700; animation: rise .3s both; }
+.ddm__card h3 { margin: 0 0 4px; font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 1.5rem; }
+.ddm__card p { margin: 0 0 18px; color: #555; }
+.ddm__opts { display: grid; gap: 10px; }
+.ddm__opt { display: flex; flex-direction: column; text-decoration: none; color: #fff; background: #eb1700; border-radius: 16px; padding: 14px 18px; border: 2px solid var(--ink); transition: transform .15s; }
+.ddm__opt:hover, .ddm__opt:focus-visible { transform: translateX(4px); }
+.ddm__opt b { font-size: 1.1rem; }
+.ddm__opt small { opacity: .9; }
+.ddm__x { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--ink); background: #fff; }
+
 /* ---------- Footer ---------- */
 .footer { background: #050505; color: rgba(255,255,255,.8); padding: 60px 0 100px; }
 .footer__inner { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 30px; }

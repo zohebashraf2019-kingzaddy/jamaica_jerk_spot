@@ -17,7 +17,7 @@ Everything lives at the top of `app.js`:
 - **`SCHEDULE`** – one line per stop: `date` (YYYY-MM-DD), `kind` (`truck` or `trailer`), `title`, `place`, `start`/`end` (24h, Reno time). Use `private: true` for closed events.
   The "Open now / opens in / next stop" cards and the hero pill update automatically. When all stops have passed, the site points visitors to Instagram.
 - **`MENU`** – names, prices, photos and descriptions per tab.
-- **`LINKS`** – DoorDash, Instagram, Facebook, TikTok, Yelp, Linktree.
+- **`LINKS`** – both DoorDash stores (truck + trailer), Instagram, TikTok, Facebook, Threads, WhatsApp, Google review, Yelp, Linktree.
 
 ## Features
 - Logo-based theme (island gold, flag green, brush-stroke black), animated hero with truck video

@@ -10,10 +10,15 @@
 const PHONE = "+17754703704";
 
 const LINKS = {
-  doordash: "https://www.doordash.com/store/jamaica-jerk-spot-sparks-29679373/",
+  // From their Linktree (linktr.ee/jamaicajerkspot)
+  doordashTruck: "https://www.doordash.com/store/31273707",    // Food Truck – 185 Shelby Dr, Sparks
+  doordashTrailer: "https://www.doordash.com/store/29679373",  // Food Trailer – 10525 Stead Blvd, Reno
   instagram: "https://www.instagram.com/jamaica_jerk_spot/",
-  facebook: "https://www.facebook.com/p/Jamaica-Jerk-Spot-100092004240665/",
+  facebook: "https://www.facebook.com/share/18dnWjoPAu/",
   tiktok: "https://www.tiktok.com/@jamaica_jerk_spot",
+  threads: "https://www.threads.com/@jamaica_jerk_spot",
+  whatsapp: "https://wa.me/17754703704",
+  googleReview: "https://search.google.com/local/writereview?placeid=ChIJcdvIM74VmYARNYhTTcGZwx8",
   yelp: "https://www.yelp.com/biz/jamaica-jerk-spot-reno",
   linktree: "https://linktr.ee/jamaicajerkspot",
 };
@@ -158,19 +163,58 @@ const ICONS = {
   tiktok: '<svg viewBox="0 0 24 24"><path d="M16.5 2c.3 2.3 1.7 3.9 4 4.1v3a7 7 0 0 1-4-1.3v6.6a6.4 6.4 0 1 1-6.4-6.4c.3 0 .6 0 .9.1v3.2a3.2 3.2 0 1 0 2.3 3.1V2h3.2z"/></svg>',
   doordash: '<svg viewBox="0 0 24 24"><path d="M3 7h12.5a5.5 5.5 0 0 1 0 11H9l2-3h4.5a2.5 2.5 0 0 0 0-5H5L3 7z"/></svg>',
   yelp: '<svg viewBox="0 0 24 24"><path d="M12 2l1.5 8.5L11 11 8 3.3C9.2 2.6 10.6 2.1 12 2zm2.5 10.5l7.2-2.2c.3 1.4.3 2.9-.1 4.3l-7.3-1.5.2-.6zm-1.9 2l4.6 6a9 9 0 0 1-4 1.4l-.9-7.3.3-.1zm-2.3-.6l-.4 7.6a9 9 0 0 1-4.1-1.9l4.2-5.9.3.2zm-.6-2.5L2.5 12.7c-.1-1.5.2-3 .9-4.3l6.4 3.6-.1.4z"/></svg>',
+  threads: '<svg viewBox="0 0 24 24"><path d="M12.2 22c-3 0-5.3-1-6.8-2.9C4 17.4 3.3 15 3.3 12s.7-5.4 2.1-7.1C6.9 3 9.2 2 12.2 2c2.3 0 4.2.6 5.6 1.8 1.3 1.1 2.2 2.6 2.7 4.5l-2.4.6c-.8-3-2.8-4.5-5.9-4.5-2.2 0-3.8.7-4.9 2-1 1.3-1.6 3.2-1.6 5.6s.5 4.3 1.6 5.6c1.1 1.3 2.7 2 4.9 2 2 0 3.3-.5 4.4-1.5 1.2-1.2 1.2-2.6.8-3.5-.2-.6-.7-1-1.2-1.4-.1 1.2-.5 2.2-1.1 3-.9 1.1-2.1 1.7-3.6 1.8-1.2.1-2.3-.2-3.2-.8-1-.7-1.6-1.7-1.6-2.9-.1-2.3 1.8-4 4.6-4.1 1 0 1.9 0 2.7.2-.1-.7-.3-1.2-.7-1.6-.5-.5-1.2-.8-2.2-.8-1 0-1.9.4-2.4 1.1l-1.9-1.3c.9-1.3 2.4-2 4.3-2 3 0 4.8 1.9 5 5.1l.1.1c1.3.6 2.3 1.6 2.8 2.8.8 1.8.8 4.6-1.4 6.8-1.7 1.7-3.8 2.4-6 2.4zm.9-9.4h-.6c-1.7.1-2.4.9-2.4 1.6 0 .8.9 1.4 2.2 1.3 1.2-.1 2.4-.7 2.6-3-.6-.1-1.2-.1-1.8 0z"/></svg>',
+  whatsapp: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.5-.3z"/></svg>',
+  google: '<svg viewBox="0 0 24 24"><path d="M12 10.2v3.9h5.5c-.2 1.4-1.7 4.1-5.5 4.1a6.2 6.2 0 0 1 0-12.4c1.9 0 3.2.8 3.9 1.5l2.7-2.6A9.9 9.9 0 0 0 12 2a10 10 0 1 0 0 20c5.8 0 9.6-4 9.6-9.8 0-.7-.1-1.2-.2-1.7H12z"/></svg>',
   linktree: '<svg viewBox="0 0 24 24"><path d="M10.5 15h3v7h-3zM3 8.5h6.4L4.9 4.2 7 2.1l4 4.1V0h2v6.2l4-4.1 2.1 2.1-4.5 4.3H21v3h-6.4l4.6 4.4-2.1 2.1L12 12.8 6.9 18l-2.1-2.1 4.6-4.4H3z"/></svg>',
 };
 function renderSocials() {
   const list = [
-    ["doordash", "DoorDash", "social--dd"],
     ["instagram", "Instagram"],
-    ["facebook", "Facebook"],
     ["tiktok", "TikTok"],
+    ["facebook", "Facebook"],
+    ["threads", "Threads"],
+    ["whatsapp", "WhatsApp"],
     ["yelp", "Yelp"],
     ["linktree", "All links"],
   ];
-  const html = list.map(([k, label, cls = ""]) => `<a class="social ${cls}" href="${LINKS[k]}" target="_blank" rel="noopener">${ICONS[k]}<span>${label}</span></a>`).join("");
+  const html = `<a class="social social--dd" href="${LINKS.doordashTrailer}" target="_blank" rel="noopener" data-dd>${ICONS.doordash}<span>DoorDash</span></a>` +
+    list.map(([k, label]) => `<a class="social" href="${LINKS[k]}" target="_blank" rel="noopener">${ICONS[k]}<span>${label}</span></a>`).join("");
   $$("[data-socials]").forEach((el) => { el.classList.add("socials"); el.innerHTML = html; });
+}
+
+/* Linktree-style link hub */
+function renderHub() {
+  const items = [
+    ["doordashTruck", "doordash", "Order DoorDash — Food Truck", "185 Shelby Dr, Sparks", "hub__btn--dd"],
+    ["doordashTrailer", "doordash", "Order DoorDash — Food Trailer", "10525 Stead Blvd, Reno", "hub__btn--dd"],
+    ["googleReview", "google", "Leave us a Google Review", "Your 5★ helps a small business", "hub__btn--gold"],
+    ["yelp", "yelp", "Review us on Yelp", ""],
+    ["instagram", "instagram", "Instagram", "@jamaica_jerk_spot · weekly schedule"],
+    ["tiktok", "tiktok", "TikTok", "@jamaica_jerk_spot"],
+    ["facebook", "facebook", "Facebook", "Jamaica Jerk Spot"],
+    ["threads", "threads", "Threads", "@jamaica_jerk_spot"],
+    ["whatsapp", "whatsapp", "WhatsApp us", "775-470-3704"],
+  ];
+  $("[data-hub]").innerHTML = items.map(([k, ic, label, sub, cls = ""]) =>
+    `<a class="hub__btn ${cls}" href="${LINKS[k]}" target="_blank" rel="noopener"><span class="hub__ic">${ICONS[ic]}</span><span class="hub__txt"><b>${label}</b>${sub ? `<small>${sub}</small>` : ""}</span><span class="hub__arrow">↗</span></a>`).join("");
+}
+
+/* DoorDash: two stores, let the customer pick */
+function initDoorDash() {
+  const m = $("[data-ddm]");
+  $("[data-ddm-opts]").innerHTML = [
+    ["doordashTruck", "🚚 Food Truck", "185 Shelby Dr, Sparks"],
+    ["doordashTrailer", "🛻 Food Trailer", "10525 Stead Blvd, Reno"],
+  ].map(([k, t, a]) => `<a class="ddm__opt" href="${LINKS[k]}" target="_blank" rel="noopener"><b>${t}</b><small>${a}</small></a>`).join("");
+  let last;
+  const close = () => { m.hidden = true; document.body.style.overflow = ""; last && last.focus(); };
+  document.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-dd]");
+    if (t) { e.preventDefault(); last = t; m.hidden = false; document.body.style.overflow = "hidden"; $(".ddm__opt", m).focus(); return; }
+    if (e.target === m || e.target.closest("[data-ddm-close]") || e.target.closest(".ddm__opt")) { if (!m.hidden) close(); }
+  });
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && !m.hidden) close(); });
 }
 
 /* =========================================================
@@ -453,7 +497,7 @@ function initQuiz() {
         <p>${esc(it.desc)} <b>${money(it.price)}</b></p>
         <div class="btns">
           ${it.main ? `<button class="btn btn--gold btn--sm" data-q-build="${it.main.join(",")}">Build this plate</button>` : ""}
-          <a class="btn btn--green btn--sm" href="${LINKS.doordash}" target="_blank" rel="noopener">Order</a>
+          <a class="btn btn--green btn--sm" href="${LINKS.doordashTrailer}" target="_blank" rel="noopener" data-dd>Order</a>
           <button class="btn btn--line-dark btn--sm" data-q-again>Try again</button>
         </div>
       </div></div>`;
@@ -604,6 +648,8 @@ function initSmoke() {
 document.addEventListener("DOMContentLoaded", () => {
   $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
   renderSocials();
+  renderHub();
+  initDoorDash();
   renderMenu();
   Builder.init();
   initSchedule();
